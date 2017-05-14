@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="silver">#CCCCCC</color>
+    <color name="dark_red">#9F111B</color>
+    <color name="light_red">#B11623</color>
+    <color name="yellow">#ffde00</color>
+    <color name="dark_gray">#292C37</color>
+</resources>

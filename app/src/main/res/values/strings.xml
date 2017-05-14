@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Bagwork</string>
+    // Punch names
+    <string name="full_jab_text">Jab</string>
+    <string name="full_cross_text">Cross</string>
+    <string name="full_hook_text">Hook</string>
+    <string name="full_upper_text">Upper</string>
+    <string name="full_body_text">Body</string>
+    // Short punch names (_d for dominant, _n for non-dominant)
+    <string name="short_jab_text">1</string>
+    <string name="short_cross_text">2</string>
+    <string name="short_hook_n">3</string>
+    <string name="short_hook_d">4</string>
+    <string name="short_body_n">5</string>
+    <string name="short_body_d">6</string>
+    <string name="short_upper_n">7</string>
+    <string name="short_upper_d">8</string>
+    // Handedness names
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="nonbiased">Non-Biased</string>
+    // Move names
+    <string name="full_slip_text">Slip</string>
+    <string name="full_block_text">Block</string>
+    <string name="full_roll_text">Roll</string>
+    <string name="full_catch_text">Catch</string>
+    // Misc
+    <string name="action_settings">Settings</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+    <string name="moves">Moves</string>
+    <string name="punches">Punches</string>
+    <string name="dialog_setup_nothing_selected">You need to select at least one checkbox to continue.</string>
+    <string name="okay">Got it</string>
+    <string name="alert_setup_dialog_title">Error</string>
+    <string name="new_session">Start New Session</string>
+    <string name="clock">Clock</string>
+    <string name="presets">Presets</string>
+    <string name="settings">Settings</string>
+    <string name="pause">Pause</string>
+    <string name="round_min_default">03</string>
+    <string name="rest_min_default">01</string>
+    <string name="sec_default">00</string>
+    <string name="num_rounds_default">4</string>
+    <string name="round_length_label">Round Length</string>
+    <string name="minute_short">m</string>
+    <string name="second_short">s</string>
+    <string name="num_rounds_label">Number of Rounds</string>
+    <string name="handedness">Handedness</string>
+    <string name="save">Save</string>
+
+    <string name="profile_name">profile.xml</string>
+
+    <string-array name="digits_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+</resources>

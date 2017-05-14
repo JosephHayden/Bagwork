@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" tools:context=".SessionSetupActivity"
+    android:background="#9F111B">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:weightSum="1"
+        android:paddingBottom="10dp"
+        android:id="@+id/mainLayout">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:shrinkColumns="1"
+            android:layout_gravity="center_vertical|top"
+            android:id="@+id/roundParamsTableLayout">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="4"
+                android:id="@+id/roundLengthRow">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Max Shots in Sequence"
+                    android:id="@+id/roundLengthText"
+                    android:layout_column="0"
+                    android:textSize="20dp"
+                    android:layout_weight="3"
+                    android:textColor="#CCCCCC" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/roundLengthSpinner"
+                    android:entries="@array/digits_array"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="4"
+                android:paddingTop="10dp"
+                android:id="@+id/numRoundsRow">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Number of Rounds"
+                    android:id="@+id/numRoundsText"
+                    android:layout_column="0"
+                    android:textSize="20dp"
+                    android:layout_weight="3"
+                    android:textColor="#CCCCCC" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numRoundsSpinner"
+                    android:entries="@array/digits_array"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:weightSum="4"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Compounding Sequence"
+                    android:id="@+id/compoundingPunchesText"
+                    android:textColor="#CCCCCC"/>
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/compoundingPunchesCheckBox"
+                    android:textColor="#CCCCCC"
+                    android:buttonTint="#CCCCCC"/>
+
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/punchesAllHolder">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/punches"
+                android:id="@+id/punchBoxTitle"
+                android:textColor="#CCCCCC"
+                android:layout_marginLeft="0dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/punchesAllCheck"
+                android:buttonTint="#CCCCCC"
+                android:onClick="toggleAllPunches" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/punchSelection"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_layout">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sideIndependentShots">
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_jab_text"
+                    android:id="@+id/jabCheck"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:buttonTint="#CCCCCC" />
+
+                <CheckBox
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_cross_text"
+                    android:id="@+id/crossCheck"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false"
+                    android:buttonTint="#CCCCCC" />
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/sideDependentShots">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/titleRow"
+                    android:gravity="center_horizontal"
+                    android:weightSum="2"
+                    android:background="@color/dark_gray">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/left"
+                        android:id="@+id/tableTitleLeft"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#CCCCCC" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/right"
+                        android:id="@+id/tableTitleRight"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#CCCCCC" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/hookRow"
+                    android:gravity="center_horizontal"
+                    android:weightSum="2">
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_hook_text"
+                        android:id="@+id/lHookCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_hook_text"
+                        android:id="@+id/rHookCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/upperRow"
+                    android:gravity="center_horizontal"
+                    android:weightSum="2">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_upper_text"
+                        android:id="@+id/lUpperCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_upper_text"
+                        android:id="@+id/rUpperCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/bodyRow"
+                    android:gravity="center_horizontal"
+                    android:weightSum="2">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_body_text"
+                        android:id="@+id/lBodyCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_body_text"
+                        android:id="@+id/rBodyCheck"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:layout_weight="1"
+                        android:buttonTint="#CCCCCC" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/movesAllHolder">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/moves"
+                android:id="@+id/moveBoxTitle"
+                android:textColor="#CCCCCC"
+                android:padding="10dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/movesAllCheck"
+                android:buttonTint="#CCCCCC"
+                android:onClick="toggleAllMoves" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@drawable/rounded_layout"
+            android:id="@+id/moveSelection"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_catch_text"
+                android:id="@+id/catchCheck"
+                android:checked="false"
+                android:buttonTint="#CCCCCC" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_block_text"
+                android:id="@+id/blockCheck"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:buttonTint="#CCCCCC" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_slip_text"
+                android:id="@+id/slipCheck"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:buttonTint="#CCCCCC" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_roll_text"
+                android:id="@+id/rollCheck"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:buttonTint="#CCCCCC" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="166dp"
+            android:layout_height="65dp"
+            android:text="@string/start"
+            android:id="@+id/sessionSetupStartButton"
+            android:layout_gravity="center_horizontal"
+            android:onClick="startSession"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</ScrollView>

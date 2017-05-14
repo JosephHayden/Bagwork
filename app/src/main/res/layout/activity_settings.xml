@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9F111B"
+    android:id="@+id/settingsLayout"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/handednessContainer"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/settingsHandednessText"
+            android:text="@string/handedness"
+            android:textColor="@color/silver"
+            android:layout_weight=".5"
+            android:layout_column="0" />
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="horizontal"
+            android:id="@+id/handednessRadioGroup">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/left"
+                android:id="@+id/radioButtonLeft"
+                android:textColor="@color/silver"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:buttonTint="@color/silver" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/right"
+                android:id="@+id/radioButtonRight"
+                android:textColor="@color/silver"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:buttonTint="@color/silver" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Verbose Shot Callout"
+            android:id="@+id/textView"
+            android:textColor="@color/silver" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/verboseCheckbox"
+                android:layout_gravity="center_horizontal"
+                android:buttonTint="@color/silver" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/saveButtonContainer">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:id="@+id/settingsSaveButton"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:onClick="saveSettings" />
+    </RelativeLayout>
+</LinearLayout>

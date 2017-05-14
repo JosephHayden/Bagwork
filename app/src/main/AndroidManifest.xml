@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hayden.joseph.bagwork" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SessionSetupActivity"
+            android:label="Setup" >
+        </activity>
+        <activity
+            android:name=".SessionActivity"
+            android:label="Session" >
+        </activity>
+        <activity
+            android:name=".ClockActivity"
+            android:label="Clock" >
+        </activity>
+        <activity
+            android:name=".ClockSetupActivity"
+            android:label="ClockSetup" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings" >
+        </activity>
+    </application>
+
+</manifest>
